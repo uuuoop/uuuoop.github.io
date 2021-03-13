@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="矿工安全生产问题, uup&#39;blog">
+    <meta name="keywords" content="第一次homework, uup&#39;blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>矿工安全生产问题 | uup&#39;blog</title>
+    <title>第一次homework | uup&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">矿工安全生产问题</h1>
+                    <h1 class="description center-align post-title">第一次homework</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-18
+                    2021-03-13
                 </div>
                 
 
@@ -458,147 +458,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>问题描述：有一座地下的稀有金属矿由 n 条隧道和一些连接点组成，其中每条隧道连接两 个连接点。任意两个连接点之间最多只有一条隧道。为了降低旷工的危险，你的任 务是在一些连接点处安装太平井和相应的逃生装置，使得不管哪个连接点倒塌，不 在此连接点的所有旷工都能到达太平井逃生（假定除了倒塌的连接点不能通行外， 其他隧道和连接点完好无损）。为了节约成本，你应当在尽量少的连接点安装太平 井。还需要计算出当太平井的数量最小时的安装方案总数。</p>
-<p> 【输入格式】</p>
-<p> 输入包含多组数据。每组数据第一行为隧道的条数 n(n&lt;=50000)，以下 n 行每 行两个整数，即一条隧道两端的连接点编号（所有连接点从 1 开始编号）。每组数 据的所有连接点保证连通。以 0 表示输入结束。<br> 【输出格式】</p>
-<p> 对于每组数据，输出两个整数，即最少需要安装的太平井数目以及对应的方案 总数。方案总数保证在 64 位带符号整数的范围内。 </p>
-<p>【输入样例】</p>
-<pre><code>9 
-1 3 
-4 1 
-3 5 
-1 2 
-2 6 
-1 5
-6 3
-1 6
-3 2
-6
-1 2
-1 3
-2 4
-2 5
-3 6
-3 7
-0</code></pre>
-<p> 【输出样例】</p>
-<pre><code>2 4
-4 1</code></pre>
-<p>思路：查找分隔节点，即去除分隔节点可以让一个图变成多个子图。最少需要安装的太平井数为除去分隔节点后的子图数，对应的方案是每个字图的节点数的乘积，若图没有分隔节点，特殊化。</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-
-typedef struct node&#123;
-    int number;
-    struct node* next;
-&#125;node;
-typedef struct headnode&#123;
-    int divide;             //分隔节点
-    struct node* next;
-&#125;headnode;
-int dfs(headnode v[],int s,int t[])&#123;    //深度优先搜索遍历
-    node *p;
-    int m=1;
-    t[s]=1;
-    p=v[s].next;
-    while (p!=NULL) &#123;
-        if (t[p-&gt;number] == 0)
-            m += dfs(v, p-&gt;number, t);
-        p = p-&gt;next;
-    &#125;
-    return m;
-&#125;
-int C(int n, int k)             //没有分隔节点
-&#123;
-    int r1 = 1, r2 = 1;
-    if (2 * k &gt; n)
-    &#123;
-        k = n - k;
-    &#125;
-    for (; k &gt;= 1; n--, k--)
-    &#123;
-        r1 = r1 * n;
-        r2 = r2 * k;
-    &#125;
-    return (r1 / r2);
-&#125;
-int init(headnode v[],int N)&#123;       //建图，以邻接表的方式
-    int A,B,n=0;
-    node *p;
-    for (int i = 0; i &lt;N ; ++i) &#123;
-        scanf(&quot;%d %d&quot;,&amp;A,&amp;B);
-        if (v[A].next==NULL) n++;
-        if (v[B].next==NULL) n++;
-        p=(node*)malloc(sizeof(node));
-        p-&gt;number=A;
-        p-&gt;next=v[B].next;
-        v[B].next=p;
-        p=(node*)malloc(sizeof(node));
-        p-&gt;number=B;
-        p-&gt;next=v[A].next;
-        v[A].next=p;
-    &#125;
-    return n;
-&#125;
-int main() &#123;
-    headnode v[2501];
-    node *p,*ap;
-    int N,t[2501]=&#123;0&#125;,n,a=0,i,lifenode=0,sum=1;     //N隧道数，n节点数，lifenode生命节点数，sum方案数
-    while (scanf(&quot;%d&quot;,&amp;N)&amp;&amp;N!=0)&#123;
-        n=init(v,N);                        //建图
-        for ( i = 1; i &lt;=n ; ++i,a=0) &#123;     //判断第i个节点是否为分隔节点
-            t[i]=1;
-            for (int j = 1; j &lt;=n ; ++j)    //遍历
-                if (t[j]==0) &#123;
-                    dfs(v, j, t);
-                    a++;
-                &#125;
-            if (a&gt;=2)                 //需要遍历2或2次以上为的节点为分隔节点
-                v[i].divide=1;
-            for (int k = 1; k &lt;=n ; ++k)
-                t[k]=0;
-        &#125;
-        int link = 1;
-        for ( i = 1; i &lt;=n ; ++i)  //摧毁分隔节点，使分隔节点无法连通，得到子图
-            if (v[i].divide==1)
-                t[i]=1;
-        for( i=1;i&lt;=n;i++)
-        &#123;
-            if(t[i]==1) &#123;
-                link = 0;
-                break;
-            &#125;
-        &#125;
-        if(link==1)
-        &#123;
-            printf(&quot;%d %d\n&quot;,C(n,2),2);
-        &#125;
-        else
-        &#123;
-                    //遍历余下的图，得到子图数和每个子图节点数的乘积
-            for ( i = 1; i &lt;=n ; ++i) 
-            if (t[i]==0) &#123;
-                sum *= dfs(v, i, t);
-                lifenode++;
-            &#125;
-            printf(&quot;%d %d\n&quot;,lifenode,sum);
-        &#125;
-        lifenode=0;                   //释放内存，清空图数据，为下次执行做准备
-        sum=1;
-        for ( i = 1; i &lt;=n ; ++i)&#123;
-            v[i].divide=0;
-            while (v[i].next!=NULL)&#123;
-                p=v[i].next;
-                v[i].next=p-&gt;next;
-                free(p);
-            &#125;
-        &#125;
-        for (int k = 1; k &lt;=n ; ++k)
-            t[k]=0;
-        n=0;
-    &#125;
-    return 0;
-&#125;</code></pre>
+                <h4 id="如题："><a href="#如题：" class="headerlink" title="如题："></a>如题：</h4><p><img src="/.com//1.jpg" alt="homework"><br>博客使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> pages；<br>使用主题：matery；<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">https://github.com/blinkfox/hexo-theme-matery</a></p>
+<p>1.希望能对软件开发的整体流程有初步的认识和了解。</p>
+<p>2.教不会，软件工程讲授的是软件开发的整体流程，软件的生命周期，而不是具体的编码如何去写程序。</p>
 
             </div>
             <hr/>
@@ -624,7 +486,7 @@ int main() &#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/11/18/%E7%9F%BF%E5%B7%A5%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%98/">http://example.com/2020/11/18/%E7%9F%BF%E5%B7%A5%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%98/</a>
+                    <a href="http://example.com/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/">http://example.com/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -827,9 +689,10 @@ int main() &#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/">
                     <div class="card-image">
@@ -849,9 +712,9 @@ int main() &#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -860,6 +723,7 @@ int main() &#123;
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -870,24 +734,24 @@ int main() &#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/17/hello-world/">
+                <a href="/2020/11/18/%E7%9F%BF%E5%B7%A5%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%98/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矿工安全生产问题">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">矿工安全生产问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            问题描述：有一座地下的稀有金属矿由 n 条隧道和一些连接点组成，其中每条隧道连接两 个连接点。任意两个连接点之间最多只有一条隧道。为了降低旷工的危险，你的任 务是在一些连接点处安装太平井和相应的逃生装置，使得不管哪个连接点倒塌，不 在此连接
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
                             </span>
                         <span class="publish-author">
                             
