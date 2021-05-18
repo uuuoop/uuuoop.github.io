@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一次homework, uup&#39;blog">
+    <meta name="keywords" content="初探Vue, uup&#39;blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一次homework | uup&#39;blog</title>
+    <title>初探Vue | uup&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一次homework</h1>
+                    <h1 class="description center-align post-title">初探Vue</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-13
+                    2021-03-18
                 </div>
                 
 
@@ -458,9 +458,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="如题："><a href="#如题：" class="headerlink" title="如题："></a>如题：</h4><p><img src="https://uuuoop.github.io/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/1.jpg" alt="homework图片"><br>博客使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>+<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> pages；<br>使用主题：matery；<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">https://github.com/blinkfox/hexo-theme-matery</a><br>gluter软工19-2班</p>
-<p>1.希望能对软件开发的整体流程有初步的认识和了解。</p>
-<p>2.教不会，软件工程讲授的是软件开发的整体流程，软件的生命周期，而不是具体的编码如何去写程序。</p>
+                <h2 id="什么是Vue"><a href="#什么是Vue" class="headerlink" title="什么是Vue"></a>什么是Vue</h2><p>Vue (读音 /vjuː/，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。—-这是官网介绍。接下来就跟着官网的介绍走一遍吧。</p>
+<h3 id="vue的安装"><a href="#vue的安装" class="headerlink" title="vue的安装"></a>vue的安装</h3><p>对于学习了解来说，最方便的方法是使用CDN。在body标签的尾部添加</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h4 id="1-渲染式声明"><a href="#1-渲染式声明" class="headerlink" title="1.渲染式声明"></a>1.渲染式声明</h4><p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统，在body尾部添加：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> message <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    message<span class="token punctuation">:</span> <span class="token string">'Hello Vue!'</span>
+  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>如此一来id为app的div元素就被Vue对象app绑定，app中的message将会渲染到div中</p>
+<p><img src="/.com//blog_se\source_posts\test-md\QQ截图20210518201004.png"></p>
+<p>看起来这跟渲染一个字符串模板非常类似，但是 Vue 在背后做了大量工作。现在数据和 DOM 已经被建立了关联，所有东西都是<strong>响应式的</strong>。我们可以在控制台查看</p>
+<p>message的值并试着修改他，<code>ctrl + shift + i</code> 打开浏览器开发者模式，并打开console，输入</p>
+<pre class=" language-shell"><code class="language-shell">app.message    </code></pre>
+<p> 显示message的值为 <code>Hello Vue!</code>，输入</p>
+<pre class=" language-html"><code class="language-html"> app.message="this is glut"</code></pre>
+<p>把”this is glut”字符串修改，</p>
+<p><img src="/.com//blog_se\source_posts\test-md\QQ截图20210518201228.png" alt="p2"></p>
+<p>可以看看我我们修改成功了，并且vue把结果实时渲染了出来。注意我们不再和 HTML 直接交互了。一个 Vue 应用会将其挂载到一个 DOM 元素上 (对于这个例子是 <code>#app</code>) 然后对其进行完全控制。那个 HTML 是我们的入口，但其余都会发生在新创建的 Vue 实例内部。</p>
+<p>官网还有一个修改元素抽象值的实例，同样展示了vue的渲染式声明，只不过用到了 <code>v-bind:</code> 来绑定抽象值，例如元素的 <code>title</code> 值被渲染，大家可以去试试。</p>
+<h4 id="2-条件与循环"><a href="#2-条件与循环" class="headerlink" title="2.条件与循环"></a>2.条件与循环</h4><p>好累，下次再写….</p>
 
             </div>
             <hr/>
@@ -486,7 +509,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/">http://example.com/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/</a>
+                    <a href="http://example.com/2021/03/18/test-md/">http://example.com/2021/03/18/test-md/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -689,9 +712,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/03/18/test-md/">
                     <div class="card-image">
@@ -709,9 +733,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -720,6 +744,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -730,24 +755,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/18/%E7%9F%BF%E5%B7%A5%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E9%97%AE%E9%A2%98/">
+                <a href="/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="矿工安全生产问题">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第一次homework">
                         
-                        <span class="card-title">矿工安全生产问题</span>
+                        <span class="card-title">第一次homework</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            问题描述：有一座地下的稀有金属矿由 n 条隧道和一些连接点组成，其中每条隧道连接两 个连接点。任意两个连接点之间最多只有一条隧道。为了降低旷工的危险，你的任 务是在一些连接点处安装太平井和相应的逃生装置，使得不管哪个连接点倒塌，不 在此连接
+                            如题：博客使用Hexo+GitHub pages；使用主题：matery；https://github.com/blinkfox/hexo-theme-materygluter软工19-2班
+1.希望能对软件开发的整体流程有初步的认识和了解
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
                             </span>
                         <span class="publish-author">
                             
