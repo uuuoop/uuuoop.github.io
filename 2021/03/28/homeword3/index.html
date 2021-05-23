@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="初探Vue, uup&#39;blog">
+    <meta name="keywords" content="homeword3, uup&#39;blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>初探Vue | uup&#39;blog</title>
+    <title>homeword3 | uup&#39;blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">初探Vue</h1>
+                    <h1 class="description center-align post-title">homeword3</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-18
+                    2021-03-28
                 </div>
                 
 
@@ -458,34 +458,35 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是Vue"><a href="#什么是Vue" class="headerlink" title="什么是Vue"></a>什么是Vue</h2><p>Vue 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p>—-这是官网介绍。接下来就跟着官网的介绍走一遍吧。</p>
-<h3 id="vue的安装"><a href="#vue的安装" class="headerlink" title="vue的安装"></a>vue的安装</h3><p>对于学习了解来说，最方便的方法是使用CDN。在body标签的尾部添加</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
-<h4 id="1-渲染式声明"><a href="#1-渲染式声明" class="headerlink" title="1.渲染式声明"></a>1.渲染式声明</h4><p>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统，在body尾部添加：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-  <span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> message <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
-  data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    message<span class="token punctuation">:</span> <span class="token string">'Hello Vue!'</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
-<p>如此一来id为app的div元素就被Vue对象app绑定，app中的message将会渲染到div中</p>
-<p><img src="https://uuuoop.github.io/2021/03/18/test-md/QQ%E6%88%AA%E5%9B%BE20210518201004.png"></p>
-<p>看起来这跟渲染一个字符串模板非常类似，但是 Vue 在背后做了大量工作。现在数据和 DOM 已经被建立了关联，所有东西都是<strong>响应式的</strong>。我们可以在控制台查看</p>
-<p>message的值并试着修改他，<code>ctrl + shift + i</code> 打开浏览器开发者模式，并打开console，输入</p>
-<pre class=" language-shell"><code class="language-shell">app.message    </code></pre>
-<p> 显示message的值为 <code>Hello Vue!</code>，输入</p>
-<pre class=" language-html"><code class="language-html"> app.message="this is glut"</code></pre>
-<p>把”this is glut”字符串修改，</p>
-<p><img src="https://uuuoop.github.io/2021/03/18/test-md/QQ%E6%88%AA%E5%9B%BE20210518201228.png" alt="p2"></p>
-<p>可以看看我我们修改成功了，并且vue把结果实时渲染了出来。注意我们不再和 HTML 直接交互了。一个 Vue 应用会将其挂载到一个 DOM 元素上 (对于这个例子是 <code>#app</code>) 然后对其进行完全控制。那个 HTML 是我们的入口，但其余都会发生在新创建的 Vue 实例内部。</p>
-<p>官网还有一个修改元素抽象值的实例，同样展示了vue的渲染式声明，只不过用到了 <code>v-bind:</code> 来绑定抽象值，例如元素的 <code>title</code> 值被渲染，大家可以去试试。</p>
-<h4 id="2-条件与循环"><a href="#2-条件与循环" class="headerlink" title="2.条件与循环"></a>2.条件与循环</h4><p>好累，下次再写….</p>
+                <h3 id="1-为什么软件开发周期总是预估的2-3倍"><a href="#1-为什么软件开发周期总是预估的2-3倍" class="headerlink" title="1.为什么软件开发周期总是预估的2~3倍?"></a>1.为什么软件开发周期总是预估的2~3倍?</h3><p>贴一条quora的回答</p>
+<blockquote>
+<p>The main reason is the underlying variability in knowledge work. No variability - &gt; no added value. SW development is creating solutions to new ideas. This is totally different from e.g. manufacturing.</p>
+<p>In manufacturing you try to do the same thing over and over (and over and over ….) again. The main thing to do here is drive out variability in the manufacturing process.</p>
+<p>In SW development, if you drive out the variability, you drive out the value of the newly created things. This sound more abstract than it is. If you want to drive out variability (at least of the unknown) you could simply copy and paste old code to make things work.</p>
+<p>This leads to funny things: In the process of creating, let’s say, a feature, waiting time dominates active work time. (If you do not believe this, simply think of when your last delivered feature was ordered and when it was delivered, through which sequence of ‘processes’ it went and how long every persons was actually really working on it.)</p>
+<p>The funny thing is: Waiting time and duration of waiting time is highly variable. Work time is also variable (but less). So, how could you come up with an exact estimate on something which is highly variable.</p>
+<p>Another, more psychological, effect is amplifying this: We don’t remember wiring time, but nearly only active time on a task. And we only remember our active time, not that of others.</p>
+<p>In fact, normal sw development environments,which are not flow optimized as e.g. driven by Kanban systems, normally show a distribution of ca. 5-10% active time vs. 90-95% waiting time :-o</p>
+<p>I have actually observed and measured this and came up with the same observation in all environments: It always takes longer than we thought and the amount it takes is in no relation to the estimate we made. Small tasks can be quick to do or take long - and vice versa.</p>
+<p>This all comes down to Hofstadter’s law: ‘Things take longer than we think, even if we take Hofstadter’s Law into account’. And this is a law ;)</p>
+</blockquote>
+<blockquote>
+<p>主要原因是知识工作的潜在可变性。无可变性-&gt;无附加值。软件开发正在为新想法创建解决方案。这与例如制造业。<br>在制造业中，您尝试一次又一次地重复做同样的事情。这里要做的主要事情是排除制造过程中的可变性。<br>在软件开发中，如果排除了可变性，则排除了新创建的事物的价值。听起来比原来更抽象了。如果您想消除可变性（至少是未知数），则可以简单地复制并粘贴旧代码以使工作正常。<br>这导致了一些有趣的事情：假设在创建功能的过程中，等待时间占据了活跃的工作时间。 （如果您不相信这一点，只需考虑一下何时订购了最后交付的功能，何时交付了功能，经过了哪些“过程”序列以及每个人实际上在多长时间内真正对其进行工作。）<br>有趣的是：等待时间和等待时间的长短是高度可变的。工作时间也是可变的（但更少）。因此，您如何才能对高度可变的事物做出准确的估算。<br>另一个更具心理作用的效果是放大了这一点：我们不记得布线时间，而几乎只记得某个任务的活动时间。而且我们只记得自己的活动时间，而不记得其他人的活动时间。<br>我实际上已经观察并测量了这一点，并且在所有环境中都得出了相同的观察结果：它总是花费比我们想象的更长的时间，并且花费的数量与我们所做的估算无关。小任务可以快速完成或花费很长时间-反之亦然。<br>这一切都归结为霍夫施塔特定律：“即使我们考虑霍夫施塔特定律，事情所花费的时间也比我们想象的要长”。这是一条法律;）</p>
+</blockquote>
+<p>我也没有开发经验，，可能更多的是需求不断改变把</p>
+<h4 id="2-什么是分治？"><a href="#2-什么是分治？" class="headerlink" title="2.什么是分治？"></a>2.什么是分治？</h4><blockquote>
+<p><em>百度百科</em></p>
+<p>分治，字面上的解释是“分而治之”，就是把一个复杂的问题分成两个或更多的相同或相似的子问题，再把子问题分成更小的子问题……直到最后子问题可以简单的直接求解，原问题的解即子问题的解的合并。在计算机科学中，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%86%E6%B2%BB%E6%B3%95/2407337">分治法</a>就是运用分治思想的一种很重要的算法。</p>
+</blockquote>
+<p>就拿斐波那契数列来说，F[n]=F[n-1]+F[n-2] (n&gt;=2,F[0]=0,F[1]=1)，求F[20]；</p>
+<p>那就是F[20]=F[19]+F[18];</p>
+<p>F[19]=F[18]+F[17];F[18]=F[17]+F[16];</p>
+<p>把问题化到最小，也就是n=1||n==0的时，得解，合并子集得出结果；</p>
+<p><em>其实更好的解法是动态规划，有空写一下</em></p>
+<h4 id="3-什么是WBS"><a href="#3-什么是WBS" class="headerlink" title="3.什么是WBS"></a>3.什么是WBS</h4><blockquote>
+<p><em>百度百科</em></p>
+<p>工作分解结构（简称WBS）跟因数分解是一个原理，就是把一个项目，按一定的原则分解，项目分解成任务，任务再分解成一项项工作，再把一项项工作分配到每个人的日常活动中，直到分解不下去为止。即：项目→任务→工作→日常活动。工作分解结构以<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E4%BA%A4%E4%BB%98%E6%88%90%E6%9E%9C/6780498">可交付成果</a>为导向，对项目要素进行的分组，它归纳和定义了项目的整个工作范围，每下降一层代表对项目工作的更详细定义。WBS总是处于计划过程的中心，也是制定<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%9B%E5%BA%A6%E8%AE%A1%E5%88%92/4805982">进度计划</a>、资源需求、成本预算、风险管理计划和采购计划等的重要基础。</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -511,7 +512,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/03/18/test-md/">http://example.com/2021/03/18/test-md/</a>
+                    <a href="http://example.com/2021/03/28/homeword3/">http://example.com/2021/03/28/homeword3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -718,24 +719,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/21/homeword2/">
+                <a href="/2021/04/08/homeword4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="homeword2">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="homeword4">
                         
-                        <span class="card-title">homeword2</span>
+                        <span class="card-title">homeword4</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            4.目前，很多住院病人主要由护士与护工护理。这样不仅需要大量的护士与护工，而且由于不能随时观察病人的病情变化，可能会延误抢救时机。某医院打算开发-一个以计算机为中心的患者监护系统，要求该系统能随时接收每个病人生理信号(脉搏、体温、血压、心电
+                            1.什么是形式化方法
+百度百科
+形式化方法英文的名称是formal methods。在逻辑科学中是指分析、研究思维形式结构的方法。它把各种具有不同内容的思维形式(主要是命题和推理)加以比较,找出其中各个部分相互联结的方式,如命题中包含概念彼
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-08
                         </span>
                         <span class="publish-author">
                             
@@ -755,25 +758,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/13/%E7%AC%AC%E4%B8%80%E6%AC%A1homework/">
+                <a href="/2021/03/21/homeword2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="第一次homework">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="homeword2">
                         
-                        <span class="card-title">第一次homework</span>
+                        <span class="card-title">homeword2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如题：博客使用Hexo+GitHub pages；使用主题：matery；https://github.com/blinkfox/hexo-theme-materygluter软工19-2班
-1.希望能对软件开发的整体流程有初步的认识和了解
+                            4.目前，很多住院病人主要由护士与护工护理。这样不仅需要大量的护士与护工，而且由于不能随时观察病人的病情变化，可能会延误抢救时机。某医院打算开发-一个以计算机为中心的患者监护系统，要求该系统能随时接收每个病人生理信号(脉搏、体温、血压、心电
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-21
                             </span>
                         <span class="publish-author">
                             
